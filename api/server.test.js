@@ -40,7 +40,7 @@ describe('server.js', () => {
       it('invalid request returning status: 500', async () => {
           const res = await request(server)
           .post('/api/auth/register')
-          .send({username: "t", password: "" });
+          .send({username: "Steve", password: "" });
           expect(res.status).toBe(500);
       });
   });
@@ -60,7 +60,7 @@ describe('server.js', () => {
       it('invalid payload with error message of : Invalid credentials', async () => {
           const res = await request(server)
           .post('/api/auth/login')
-          .send({ username: 'Candice', password: 'n/a' })
+          .send({ username: 'Stan', password: 'n/a' })
           expect(res.status).toBe(500)
       })
   });
